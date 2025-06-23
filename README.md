@@ -69,7 +69,55 @@ Each test is logged and evaluated with:
 - 📊 Output: Exported to structured Excel files for auditing
 
 ---
+## 📘 Notebook Structure & Code Overview
 
+The notebook `Jailbreaking.ipynb` is organized into **two main parts**, each targeting a different kind of jailbreak attempt:
+
+---
+
+### 🔹 Part 1: Single-Turn Jailbreaking
+
+> **Goal:** Test how the LLM reacts to carefully engineered prompts — one at a time.
+
+#### 🧠 What the code does:
+- Loads a **list of crafted prompts** designed to trigger unsafe responses (e.g., manipulative, emotional, unethical).
+- Sends each prompt to the LLM and captures the response.
+- Automatically classifies the response using:
+  - **Intent classification** (`harmless`, `malicious`, etc.)
+  - **Moderation checks** to flag policy violations
+  - **Refusal phrase detection** to check for ethical rejections
+
+#### ✅ What you’ll see:
+- Printout of each prompt + response
+- Verdict: Safe vs. Jailbroken
+- Output summary and export to `.xlsx` for review
+
+📌 _Use this part to quickly test a range of risky prompts in isolation._
+
+---
+
+### 🔹 Part 2: Multi-Turn Jailbreaking with Agents
+
+> **Goal:** Simulate a persistent attacker who adapts and escalates over several messages.
+
+#### 🤖 What the code does:
+- Implements **an agent** that follows a multi-step strategy (e.g., Bad Likert Judge or Crescendo Attack)
+- The agent:
+  - Sends a starting prompt
+  - Waits for the chatbot’s reply
+  - Decides what to say next based on the reply
+  - Keeps going until the chatbot gives a vulnerable or definitive response
+- Logs every turn of the conversation
+- Evaluates the **entire interaction** to determine if a jailbreak occurred
+
+#### ✅ What you’ll see:
+- Full back-and-forth conversation logs
+- Step-by-step reasoning about agent behavior
+- Final safety verdict and optional Excel export
+
+📌 _Use this part to uncover deeper vulnerabilities that single prompts can’t trigger._
+
+---
 ## 🧭 Why This Matters
 
 - ✅ Realistic attacker simulation  
