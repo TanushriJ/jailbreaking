@@ -86,6 +86,7 @@ The notebook `Jailbreaking.ipynb` is organized into **two main parts**, each tar
 #### ✅ What you’ll see:
 - Printout of each prompt + response
 - Verdict: Safe vs. Jailbroken
+- Also Responsible AI policy bieng voliated in logs
 - Output summary and export to `.xlsx` for review
 
 📌 _Use this part to quickly test a range of risky prompts in isolation._
