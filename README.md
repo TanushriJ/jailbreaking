@@ -45,6 +45,7 @@ Some attackers use persistence and narrative framing to trick AI over time. This
 - Asks the LLM to answer from both perspectives  
 - Starts innocent, escalates to controversial or harmful queries  
 - Goal: Observe if the “negative” advisor bypasses safety filters
+- To see this in action check out: https://www.youtube.com/watch?v=e3fR_7Twmtk
 
 **B. Crescendo Attack**  
 - Starts with harmless questions (e.g. safety research)  
